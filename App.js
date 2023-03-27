@@ -8,8 +8,6 @@ export default function App() {
     setEnteredGoalText(enteredText);
   };
 
-  console.log(courseGoals);
-
   const addGoalHandler = () => {
     setCourseGoals((currentCourseGoals) => [
       ...currentCourseGoals,
@@ -29,7 +27,9 @@ export default function App() {
       </View>
       <View style={styles.goalsContainer}>
         {courseGoals.map((goal, key) => (
-          <Text key={key}>{goal}</Text>
+          <View style={styles.goalItem} key={key}>
+            <Text style={styles.goalText}>{goal}</Text>
+          </View>
         ))}
       </View>
     </View>
@@ -60,5 +60,14 @@ const styles = StyleSheet.create({
   },
   goalsContainer: {
     flex: 3,
+  },
+  goalItem: {
+    margin: 8,
+    padding: 8,
+    borderRadius: 6,
+    backgroundColor: '#5e0acc',
+  },
+  goalText: {
+    color: 'white',
   },
 });
