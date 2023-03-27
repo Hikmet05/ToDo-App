@@ -8,6 +8,8 @@ export default function App() {
     setEnteredGoalText(enteredText);
   };
 
+  console.log(courseGoals);
+
   const addGoalHandler = () => {
     setCourseGoals((currentCourseGoals) => [
       ...currentCourseGoals,
